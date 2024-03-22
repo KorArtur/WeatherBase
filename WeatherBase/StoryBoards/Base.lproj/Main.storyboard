@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,6 +95,7 @@
                                     <outlet property="minTempLabel" destination="bwf-HK-CAB" id="dEn-ov-tkg"/>
                                     <outlet property="temperatureLabel" destination="llH-PC-i50" id="s1K-Ja-Ky9"/>
                                     <outlet property="weatherIconView" destination="Rua-Qd-bbl" id="c3V-AT-ujd"/>
+                                    <segue destination="KrD-bX-769" kind="show" id="3Ln-xJ-Jtk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,6 +115,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGc-ms-hEJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="617.55725190839689" y="-18.30985915492958"/>
+        </scene>
+        <!--Текущая погода-->
+        <scene sceneID="W9i-7M-Uyt">
+            <objects>
+                <viewController id="KrD-bX-769" customClass="CurrentWeatherViewController" customModule="WeatherBase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LNy-C1-PHf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4u-vc-VUt">
+                                <rect key="frame" x="16" y="171" width="361" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6dB-Xo-3mw">
+                                <rect key="frame" x="146.66666666666666" y="276" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6dB-Xo-3mw" secondAttribute="height" multiplier="1:1" id="Hsl-3j-DEZ"/>
+                                    <constraint firstAttribute="width" constant="100" id="ebc-dP-WBi"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-rb-vXn">
+                                <rect key="frame" x="146.66666666666666" y="476" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0NY-rb-vXn" secondAttribute="height" multiplier="1:1" id="6Vd-Jp-Wj0"/>
+                                    <constraint firstAttribute="width" constant="100" id="IpZ-Hp-gi5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WvM-09-jfR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WvM-09-jfR" firstAttribute="trailing" secondItem="N4u-vc-VUt" secondAttribute="trailing" constant="16" id="Hai-w4-Y0o"/>
+                            <constraint firstItem="6dB-Xo-3mw" firstAttribute="centerY" secondItem="LNy-C1-PHf" secondAttribute="centerY" constant="-100" id="MAU-he-lWb"/>
+                            <constraint firstItem="0NY-rb-vXn" firstAttribute="centerX" secondItem="LNy-C1-PHf" secondAttribute="centerX" id="NS5-9x-ZX3"/>
+                            <constraint firstItem="6dB-Xo-3mw" firstAttribute="centerX" secondItem="LNy-C1-PHf" secondAttribute="centerX" id="VmY-gQ-5ZZ"/>
+                            <constraint firstItem="0NY-rb-vXn" firstAttribute="centerY" secondItem="LNy-C1-PHf" secondAttribute="centerY" constant="100" id="e9T-gQ-h1a"/>
+                            <constraint firstItem="N4u-vc-VUt" firstAttribute="top" secondItem="WvM-09-jfR" secondAttribute="top" constant="16" id="pNz-kr-dhX"/>
+                            <constraint firstItem="N4u-vc-VUt" firstAttribute="leading" secondItem="WvM-09-jfR" secondAttribute="leading" constant="16" id="sae-sQ-BxH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Текущая погода" id="ADl-EH-slT"/>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="N4u-vc-VUt" id="FDE-Dy-S2n"/>
+                        <outlet property="sunView" destination="6dB-Xo-3mw" id="zcv-p6-e4I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dc8-Nr-gfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380.9160305343512" y="-18.30985915492958"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5df-44-urV">

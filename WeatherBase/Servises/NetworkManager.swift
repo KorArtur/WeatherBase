@@ -15,7 +15,6 @@ enum NetworkError: Error {
 
 final class NetworkManager {
     
-    let city = ""
     static let shared = NetworkManager()
     
     private let apiKey = "239984673fcc9cd389be094b9a97cbbc"

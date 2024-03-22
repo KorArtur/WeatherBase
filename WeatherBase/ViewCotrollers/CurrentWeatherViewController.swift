@@ -19,4 +19,12 @@ final class CurrentWeatherViewController: UIViewController {
         cityNameLabel.text = weatherCity.name
         sunView.image = UIImage(named: "sun")
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(animated)
+    }
+    
+    private func rotateSun() {
+        
+    }
 }

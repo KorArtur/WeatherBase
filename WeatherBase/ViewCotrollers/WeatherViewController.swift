@@ -76,7 +76,8 @@ final class WeatherViewController: UITableViewController {
     }
     
     private func downloadWeather(for city: String) {
-        networkManager.fetchWeatherData(for: city) { result in
+        networkManager.fetchWeather(for: city) { [weak self] result in
+            guard let self else { return }
             switch result {
             case .success(let data):
                 self.weatherCity.append(data)

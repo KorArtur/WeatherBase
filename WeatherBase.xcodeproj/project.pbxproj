@@ -16,6 +16,7 @@
 		F1D19B102BAA1F6500F8EEB4 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D19B0F2BAA1F6500F8EEB4 /* WeatherData.swift */; };
 		F1D19B142BAA1FC600F8EEB4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D19B132BAA1FC600F8EEB4 /* NetworkManager.swift */; };
 		F1D19B192BAA22F100F8EEB4 /* WeatherCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D19B182BAA22F100F8EEB4 /* WeatherCityCell.swift */; };
+		F1D19B1C2BAC479700F8EEB4 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D19B1B2BAC479700F8EEB4 /* CurrentWeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F1D19B0F2BAA1F6500F8EEB4 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		F1D19B132BAA1FC600F8EEB4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F1D19B182BAA22F100F8EEB4 /* WeatherCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityCell.swift; sourceTree = "<group>"; };
+		F1D19B1B2BAC479700F8EEB4 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				F1D19AFF2BAA1F2800F8EEB4 /* WeatherViewController.swift */,
+				F1D19B1B2BAC479700F8EEB4 /* CurrentWeatherViewController.swift */,
 			);
 			path = ViewCotrollers;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				F1D19B002BAA1F2800F8EEB4 /* WeatherViewController.swift in Sources */,
 				F1D19AFC2BAA1F2800F8EEB4 /* AppDelegate.swift in Sources */,
 				F1D19B142BAA1FC600F8EEB4 /* NetworkManager.swift in Sources */,
+				F1D19B1C2BAC479700F8EEB4 /* CurrentWeatherViewController.swift in Sources */,
 				F1D19B192BAA22F100F8EEB4 /* WeatherCityCell.swift in Sources */,
 				F1D19B102BAA1F6500F8EEB4 /* WeatherData.swift in Sources */,
 				F1D19AFE2BAA1F2800F8EEB4 /* SceneDelegate.swift in Sources */,

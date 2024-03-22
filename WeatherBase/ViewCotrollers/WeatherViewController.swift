@@ -17,10 +17,10 @@ final class WeatherViewController: UITableViewController {
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "minimalist-natural-wallpaper-for-mobile-phone-free-photo.jpg"))
     }
     
-    @IBAction private func addCityButtonTaped(_ sender: Any) {
-        addCityAlert { city in
-            self.downloadWeather(for: city)
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let currentWeatherVC = segue.destination as? CurrentWeatherViewController
+        currentWeatherVC?.weatherCity = weatherCity[indexPath.row]
     }
     
     override func tableView(
@@ -43,6 +43,12 @@ final class WeatherViewController: UITableViewController {
         cell.configure(with: weather)
         
         return cell
+    }
+    
+    @IBAction private func addCityButtonTaped(_ sender: Any) {
+        addCityAlert { city in
+            self.downloadWeather(for: city)
+        }
     }
     
     private func addCityAlert(completion: @escaping (String) -> Void) {
@@ -74,8 +80,9 @@ final class WeatherViewController: UITableViewController {
             switch result {
             case .success(let data):
                 self.weatherCity.append(data)
+                let indexPath = IndexPath(row: self.weatherCity.count - 1, section: 0)
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.tableView.insertRows(at: [indexPath], with: .fade)
                 }
             case .failure(let error):
                 DispatchQueue.main.async {

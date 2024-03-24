@@ -76,11 +76,12 @@ final class WeatherViewController: UITableViewController {
     }
     
     private func downloadWeather(for city: String) {
-        networkManager.fetchWeatherData(for: city) { result in
+        networkManager.fetchWeatherManual(for: city) { [weak self] result in
+            guard let self else { return }
             switch result {
             case .success(let data):
-                self.weatherCity.append(data)
-                let indexPath = IndexPath(row: self.weatherCity.count - 1, section: 0)
+                weatherCity.append(data)
+                let indexPath = IndexPath(row: weatherCity.count - 1, section: 0)
                 DispatchQueue.main.async {
                     self.tableView.insertRows(at: [indexPath], with: .fade)
                 }
@@ -93,7 +94,7 @@ final class WeatherViewController: UITableViewController {
     }
     
     private func showAlert(for error: String) {
-            let alertController = UIAlertController(
+        let alertController = UIAlertController(
             title: "Ошибка",
             message: error,
             preferredStyle: .alert

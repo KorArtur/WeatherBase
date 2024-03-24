@@ -11,6 +11,7 @@ import UIKit
 final class WeatherCityCell: UITableViewCell {
     
     @IBOutlet private var weatherIconView: UIImageView!
+    
     @IBOutlet private var cityLabel: UILabel!
     @IBOutlet private var conditionLabel: UILabel!
     @IBOutlet private var temperatureLabel: UILabel!
@@ -20,8 +21,6 @@ final class WeatherCityCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = .clear
-        let margins = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        contentView.frame = contentView.frame.inset(by: margins)
     }
     
     func configure(with weather: WeatherData) {
